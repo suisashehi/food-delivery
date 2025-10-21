@@ -2,13 +2,15 @@ import React, { use, useContext } from 'react'
 import './FoodDisplay.css'
 import { StoreContext } from '../../context/StoreContext'
 
-const FileDisplay = () => {
+const FoodDisplay = ({category}) => {
 
 
     const {food_list } = useContext(StoreContext)
   return (
-    <div></div>
+    <div className='food-display' id='food-display'>
+      <h2>Top dishes near you</h2>
+    </div>
   )
 }
 
-export default FileDisplay
+export default FoodDisplay
