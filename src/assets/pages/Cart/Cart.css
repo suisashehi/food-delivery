@@ -53,3 +53,67 @@
     justify-content: space-between;
     color: #555;
 }
+
+.cart-total hr{
+    margin: 10px 0 ;
+}
+
+.cart-total button{
+    border: none;
+    color: white;
+    background-color: tomato;
+    width: max(15vw,200px);
+    padding: 12px 0px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Force promo area visible for debugging — remove !important once confirmed */
+.cart-promocode{
+  flex: 1;
+  background-color: #f5f5f5 !important; /* light gray background */
+  padding: 20px !important;
+  border-radius: 8px !important;
+  min-height: 120px !important;        /* ensure it doesn't collapse */
+  box-sizing: border-box;
+  display: block;
+}
+
+/* text color inside */
+.cart-promocode p{
+  color: #555;
+  margin: 0;
+}
+
+/* input + button wrapper */
+.cart-promocode .cart-promocode-input {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border: 1px solid #eaeaea;
+  border-radius: 4px;
+  padding: 8px;
+  gap: 8px;
+}
+
+/* make input take remaining space */
+.cart-promocode .cart-promocode-input input{
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+}
+
+/* button style */
+.cart-promocode .cart-promocode-input button {
+  background-color: tomato;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
