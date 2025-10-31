@@ -15,10 +15,10 @@ const StoreContextProvider = ({ children }) => {
 
   const removeFromCart = (itemId) => {
     setCartItems((prev) => {
-      if (!prev[itemId]) return prev; // nothing to remove
+      if (!prev[itemId]) return prev; 
       const newCount = prev[itemId] - 1;
       if (newCount <= 0) {
-        const { [itemId]: _, ...rest } = prev; // remove item completely
+        const { [itemId]: _, ...rest } = prev; 
         return rest;
       }
       return { ...prev, [itemId]: newCount };
