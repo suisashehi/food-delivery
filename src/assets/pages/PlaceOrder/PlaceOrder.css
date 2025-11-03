@@ -26,6 +26,14 @@
     outline-color: tomato;
 } 
 
-.multi-fields{
-    
+.place-order-left .multi-fields{
+    display: flex;
+    gap: 10px;
 }
+
+.place-order-right{
+    width: 100%;
+    max-width: max(40%,500px);
+   
+}
+
