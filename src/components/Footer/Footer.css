@@ -1,13 +1,30 @@
 .footer {
+  background-color: #1e1e1e;
   color: #d9d9d9;
-  background-color: #323232;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  padding: 20px 8vw;
-  padding-top: 80px;
-  margin-top: 100px;
+  gap: 30px;
+  padding: 60px 8vw 30px;
+  margin-top: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ✨ subtle glow gradient background */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at top center,
+    rgba(255, 99, 71, 0.05),
+    transparent 60%
+  );
+  z-index: 0;
 }
 
 .footer-content {
@@ -15,6 +32,7 @@
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: 80px;
+  z-index: 1;
 }
 
 .footer-content-left,
@@ -22,40 +40,101 @@
 .footer-content-center {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  align-items: start;
+  gap: 18px;
+  align-items: flex-start;
+  position: relative;
+}
+
+.footer-content-left h2,
+.footer-content-right h2,
+.footer-content-center h2 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  position: relative;
+}
+
+/* small tomato accent underline */
+.footer-content-left h2::after,
+.footer-content-right h2::after,
+.footer-content-center h2::after {
+  content: "";
+  display: block;
+  width: 35px;
+  height: 3px;
+  background: tomato;
+  border-radius: 2px;
+  margin-top: 5px;
 }
 
 .footer-content-left li,
 .footer-content-right li,
 .footer-content-center li {
   list-style: none;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
-.footer-content-right h2,
-.footer-content-center h2 {
-  color: white;
+
+.footer-content-left li:hover,
+.footer-content-right li:hover,
+.footer-content-center li:hover {
+  color: tomato;
+  transform: translateX(4px);
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
 }
 
 .footer-social-icons img {
-  width: 40px;
-  margin-right: 15px;
+  width: 32px;
+  height: 32px;
+  filter: grayscale(1) brightness(0.9);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.footer-social-icons img:hover {
+  filter: grayscale(0) brightness(1.2);
+  transform: translateY(-3px) scale(1.05);
 }
 
 .footer hr {
   width: 100%;
-  height: 2px;
-  margin: 20px 0;
-  background-color: grey;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
   border: none;
+  margin: 30px 0 10px;
+}
+
+.footer-copyright {
+  color: #aaa;
+  font-size: 14px;
+  text-align: center;
+  z-index: 1;
+}
+
+.footer-copyright span {
+  color: tomato;
+  font-weight: 500;
+}
+
+/* 💡 Responsive Design */
+@media (max-width: 900px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
 }
 
 @media (max-width: 750px) {
   .footer-content {
     display: flex;
     flex-direction: column;
-    gap: 35px;
+    gap: 40px;
   }
   .footer-copyright {
     text-align: center;
